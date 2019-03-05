@@ -53,9 +53,13 @@ while true do
 				modem.send(data[3], 19178, "dns_err")
 			end
 		else
-			gpu.setForeground(0xFF0000)
-			print("Зону ."..domain.." нельзя зарегистрировать.")
-			modem.send(data[3], 19178, "dns_err")
+		--elseif data[8] == "dns_del" then
+			--gpu.setForeground(0xFFFF00)
+			--print(time .. " Поступил запрос на удаление домена, от "..data[3].." на "..data[7])
+			--fs.remove(dir .. domain)
+			--print(time .. "Домен" ..data[7] "Был удален")
+			--modem.send(data[3], 19178, "dns_success")
+			--end
 		end
 	end
 end
